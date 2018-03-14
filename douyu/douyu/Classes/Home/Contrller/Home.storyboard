@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="1Ce-bs-Bqs">
             <objects>
-                <viewController id="owI-LK-ZOW" sceneMemberID="viewController">
+                <viewController id="owI-LK-ZOW" customClass="HomeViewController" customModule="douyu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="icb-Ps-lc1"/>
                         <viewControllerLayoutGuide type="bottom" id="Tai-6C-Ih8"/>
@@ -20,7 +20,7 @@
                     <view key="view" contentMode="scaleToFill" id="Fyf-cb-XFI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.22455973463385315" blue="0.2262428723906561" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="OkN-8G-Pn8"/>
                 </viewController>

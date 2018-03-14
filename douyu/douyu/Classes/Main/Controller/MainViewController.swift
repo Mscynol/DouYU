@@ -9,7 +9,8 @@
 import UIKit
 
 class MainViewController: UITabBarController {
-
+        
+    /// 系统构造函数
     override func viewDidLoad() {
         super.viewDidLoad()
         addChildViewFreeController(storaryName: "Home")
@@ -17,12 +18,6 @@ class MainViewController: UITabBarController {
         addChildViewFreeController(storaryName: "Follow")
         addChildViewFreeController(storaryName: "Profile")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     /// 增加子View控制器
     ///
@@ -33,14 +28,5 @@ class MainViewController: UITabBarController {
         // 2、将childVC最为字控制器
         addChildViewController(childVC)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
