@@ -25,11 +25,12 @@ class HomeViewController: UIViewController {
     
     private lazy var pageContentView : PageContentView = {[weak self] in
         // 设置首页内容区的高度宽度
-        let contentViewHeight = ScreenHeight - StatusBarHeight - NavigationBarHeight - pageTitleViewHeight
+        let contentViewHeight = ScreenHeight - StatusBarHeight - NavigationBarHeight - pageTitleViewHeight - TabBarHeight
         let contentViewFrame = CGRect(x: 0, y: StatusBarHeight + NavigationBarHeight + pageTitleViewHeight, width: ScreenWidth, height: contentViewHeight)
         // 确定所有的子控制器
         var childVCS = [UIViewController]()
-        for _ in 0..<4 {
+        childVCS.append(RecommendViewController())
+        for _ in 0..<3 {
            let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVCS.append(vc)
@@ -44,6 +45,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // 设置UI界面
         initUI();
+        
     }
 }
 

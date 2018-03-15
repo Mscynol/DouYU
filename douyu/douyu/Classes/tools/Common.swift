@@ -14,6 +14,9 @@ let StatusBarHeight:CGFloat = 20
 /// 导航栏高度
 let NavigationBarHeight:CGFloat = 44
 
+/// 导航栏高度
+let TabBarHeight:CGFloat = 44
+
 /// 屏幕宽度
 let ScreenWidth:CGFloat = UIScreen.main.bounds.width
 
