@@ -21,8 +21,9 @@ private let HeaderView = "HeaderView"
 /// 首页推荐控制器
 class RecommendViewController: UIViewController {
     /// 懒加载属性
+    private lazy var recommendViewModule : RecommendViewViewModel = RecommendViewViewModel()
+    
     private lazy var collectionView : UICollectionView = { [unowned self] in
-        
         /// 创建uicollectionView布局
         let collectionViewLayout = UICollectionViewFlowLayout()
         
@@ -66,10 +67,19 @@ class RecommendViewController: UIViewController {
         
         // MARK: - 设置UI界面
         initUI()
+        
+        // MARK: - 发送网路请求
+        loadData()
     
     }
 }
 
+// MARK: -  请求数据
+extension RecommendViewController {
+    private func loadData(){
+        recommendViewModule.requestData()
+    }
+}
 // MARK: - 进行扩展设置推荐界面
 extension RecommendViewController {
     

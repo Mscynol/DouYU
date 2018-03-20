@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class MainViewController: UITabBarController {
         
     /// 系统构造函数
@@ -17,6 +17,9 @@ class MainViewController: UITabBarController {
         addChildViewFreeController(storaryName: "Live")
         addChildViewFreeController(storaryName: "Follow")
         addChildViewFreeController(storaryName: "Profile")
+        NetworkTools.requestData(type: .post, URLString: "http://httpbin.org/post", parameters: ["name":"Aisino"]) { (result) in
+            print(result)
+        }
     }
     
     /// 增加子View控制器
