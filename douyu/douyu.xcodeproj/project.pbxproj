@@ -14,6 +14,15 @@
 		5B378D8A205A380F0017C45B /* CollectionViewNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B378D88205A380F0017C45B /* CollectionViewNormalCell.xib */; };
 		5B378D8D205A45260017C45B /* CollectionViewPrettyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B378D8B205A45260017C45B /* CollectionViewPrettyCell.swift */; };
 		5B378D8E205A45260017C45B /* CollectionViewPrettyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B378D8C205A45260017C45B /* CollectionViewPrettyCell.xib */; };
+		5B6CD2402061053D00F04938 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD23F2061053D00F04938 /* NSDate-Extension.swift */; };
+		5B6CD24220610B6500F04938 /* AuthorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD24120610B6500F04938 /* AuthorGroup.swift */; };
+		5B6CD2442063AB0F00F04938 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD2432063AB0F00F04938 /* Author.swift */; };
+		5B6CD2462068CC3600F04938 /* CollectionViewBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD2452068CC3600F04938 /* CollectionViewBasicCell.swift */; };
+		5B6CD250206A234700F04938 /* RecommendCarouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD24F206A234700F04938 /* RecommendCarouseView.swift */; };
+		5B6CD252206A235600F04938 /* RecommendCarouseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6CD251206A235600F04938 /* RecommendCarouseView.xib */; };
+		5B6CD254206A36E700F04938 /* CarouseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD253206A36E700F04938 /* CarouseModel.swift */; };
+		5B6CD259206A411500F04938 /* CarouseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CD257206A411500F04938 /* CarouseViewCell.swift */; };
+		5B6CD25A206A411500F04938 /* CarouseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6CD258206A411500F04938 /* CarouseViewCell.xib */; };
 		5B788BB3205F9601001B4012 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B788BB2205F9601001B4012 /* NetworkTools.swift */; };
 		5B788BB62060F45F001B4012 /* RecommendViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B788BB52060F45F001B4012 /* RecommendViewViewModel.swift */; };
 		5B8E5BB3204FCEAC00DEFCA6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8E5BB2204FCEAC00DEFCA6 /* Home.storyboard */; };
@@ -43,6 +52,15 @@
 		5B378D88205A380F0017C45B /* CollectionViewNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewNormalCell.xib; sourceTree = "<group>"; };
 		5B378D8B205A45260017C45B /* CollectionViewPrettyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPrettyCell.swift; sourceTree = "<group>"; };
 		5B378D8C205A45260017C45B /* CollectionViewPrettyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewPrettyCell.xib; sourceTree = "<group>"; };
+		5B6CD23F2061053D00F04938 /* NSDate-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		5B6CD24120610B6500F04938 /* AuthorGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorGroup.swift; sourceTree = "<group>"; };
+		5B6CD2432063AB0F00F04938 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		5B6CD2452068CC3600F04938 /* CollectionViewBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewBasicCell.swift; sourceTree = "<group>"; };
+		5B6CD24F206A234700F04938 /* RecommendCarouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCarouseView.swift; sourceTree = "<group>"; };
+		5B6CD251206A235600F04938 /* RecommendCarouseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendCarouseView.xib; sourceTree = "<group>"; };
+		5B6CD253206A36E700F04938 /* CarouseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouseModel.swift; sourceTree = "<group>"; };
+		5B6CD257206A411500F04938 /* CarouseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouseViewCell.swift; sourceTree = "<group>"; };
+		5B6CD258206A411500F04938 /* CarouseViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouseViewCell.xib; sourceTree = "<group>"; };
 		5B788BB2205F9601001B4012 /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		5B788BB52060F45F001B4012 /* RecommendViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewViewModel.swift; sourceTree = "<group>"; };
 		5B8E5BB2204FCEAC00DEFCA6 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -172,6 +190,9 @@
 		5B8E5BCB2050C9F900DEFCA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B6CD24120610B6500F04938 /* AuthorGroup.swift */,
+				5B6CD2432063AB0F00F04938 /* Author.swift */,
+				5B6CD253206A36E700F04938 /* CarouseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +206,7 @@
 				5B378D88205A380F0017C45B /* CollectionViewNormalCell.xib */,
 				5B378D8B205A45260017C45B /* CollectionViewPrettyCell.swift */,
 				5B378D8C205A45260017C45B /* CollectionViewPrettyCell.xib */,
+				5B6CD2452068CC3600F04938 /* CollectionViewBasicCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +216,10 @@
 			children = (
 				5B378D832059236E0017C45B /* CollectionHeaderView.swift */,
 				5B378D842059236E0017C45B /* CollectionHeaderView.xib */,
+				5B6CD24F206A234700F04938 /* RecommendCarouseView.swift */,
+				5B6CD251206A235600F04938 /* RecommendCarouseView.xib */,
+				5B6CD257206A411500F04938 /* CarouseViewCell.swift */,
+				5B6CD258206A411500F04938 /* CarouseViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,6 +312,7 @@
 			children = (
 				5B8E5BE02050DA9200DEFCA6 /* UIBarButtonItem-Extension.swift */,
 				5B8E5BEC2052294000DEFCA6 /* UIColor-Extension.swift */,
+				5B6CD23F2061053D00F04938 /* NSDate-Extension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -399,10 +426,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6CD252206A235600F04938 /* RecommendCarouseView.xib in Resources */,
 				5BDD8A15204E8F7C009FAA66 /* LaunchScreen.storyboard in Resources */,
 				5B378D862059236E0017C45B /* CollectionHeaderView.xib in Resources */,
 				5BDD8A12204E8F7C009FAA66 /* Assets.xcassets in Resources */,
 				5B8E5BDC2050CB6B00DEFCA6 /* Main.storyboard in Resources */,
+				5B6CD25A206A411500F04938 /* CarouseViewCell.xib in Resources */,
 				5B378D8E205A45260017C45B /* CollectionViewPrettyCell.xib in Resources */,
 				5B8E5BB5204FCED000DEFCA6 /* Live.storyboard in Resources */,
 				5B378D8A205A380F0017C45B /* CollectionViewNormalCell.xib in Resources */,
@@ -441,10 +470,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-douyu/Pods-douyu-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -473,8 +504,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6CD2442063AB0F00F04938 /* Author.swift in Sources */,
+				5B6CD259206A411500F04938 /* CarouseViewCell.swift in Sources */,
 				5B8E5BDB2050CB6B00DEFCA6 /* MainViewController.swift in Sources */,
 				5B378D852059236E0017C45B /* CollectionHeaderView.swift in Sources */,
+				5B6CD2462068CC3600F04938 /* CollectionViewBasicCell.swift in Sources */,
 				5B8E5BED2052294000DEFCA6 /* UIColor-Extension.swift in Sources */,
 				5B378D822059035C0017C45B /* RecommendViewController.swift in Sources */,
 				5BDD8A0B204E8F7C009FAA66 /* AppDelegate.swift in Sources */,
@@ -483,7 +517,11 @@
 				5B9D560C2052855D00B45D84 /* PageContentView.swift in Sources */,
 				5B8E5BE5205127B200DEFCA6 /* PageTitleView.swift in Sources */,
 				5B378D8D205A45260017C45B /* CollectionViewPrettyCell.swift in Sources */,
+				5B6CD2402061053D00F04938 /* NSDate-Extension.swift in Sources */,
 				5B8E5BE12050DA9200DEFCA6 /* UIBarButtonItem-Extension.swift in Sources */,
+				5B6CD24220610B6500F04938 /* AuthorGroup.swift in Sources */,
+				5B6CD250206A234700F04938 /* RecommendCarouseView.swift in Sources */,
+				5B6CD254206A36E700F04938 /* CarouseModel.swift in Sources */,
 				5B8E5BE720512DA200DEFCA6 /* Common.swift in Sources */,
 				5B788BB3205F9601001B4012 /* NetworkTools.swift in Sources */,
 				5B8E5BDE2050CD6200DEFCA6 /* HomeViewController.swift in Sources */,

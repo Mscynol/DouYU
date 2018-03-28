@@ -8,11 +8,20 @@
 
 import UIKit
 
-class CollectionViewNormalCell: UICollectionViewCell {
+class CollectionViewNormalCell: CollectionViewBasicCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    /// 控件属性
+    
+    @IBOutlet weak var roomNameLabel: UILabel!
+    
+    
+    /// 定义模型属性
+    override var author : Author?{
+        didSet{
+            super.author = author
+            /// 房间名称
+            roomNameLabel.text = author?.room_name
+        }
     }
 
 }

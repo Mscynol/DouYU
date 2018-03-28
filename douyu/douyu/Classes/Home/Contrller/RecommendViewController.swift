@@ -13,6 +13,7 @@ private let ItemMargin : CGFloat = 10
 private let ItemWidth : CGFloat = (ScreenWidth - (3 * ItemMargin)) / 2
 private let ItemNormalHeight : CGFloat = ItemWidth * 3 / 4
 private let ItemPrettyHeight : CGFloat = ItemWidth * 4 / 3
+private let CarouselViewHeight : CGFloat = ScreenWidth * 3 / 8
 private let HeadViewHeight : CGFloat = 50
 private let NormalCellID = "NormalCellID"
 private let PrettyCellID = "PrettyCellID"
@@ -22,7 +23,6 @@ private let HeaderView = "HeaderView"
 class RecommendViewController: UIViewController {
     /// 懒加载属性
     private lazy var recommendViewModule : RecommendViewViewModel = RecommendViewViewModel()
-    
     private lazy var collectionView : UICollectionView = { [unowned self] in
         /// 创建uicollectionView布局
         let collectionViewLayout = UICollectionViewFlowLayout()
@@ -60,6 +60,12 @@ class RecommendViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var recommendCarouselView : RecommendCarouseView = {
+        let recommendCarouselView = RecommendCarouseView.recommendCarouselView()
+        recommendCarouselView.frame = CGRect(x: 0, y: -CarouselViewHeight, width: ScreenWidth, height: CarouselViewHeight)
+        return recommendCarouselView
+    }()
+    
     /// 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +76,11 @@ class RecommendViewController: UIViewController {
         
         // MARK: - 发送网路请求
         loadData()
+        
+        // MARK: - 将recommendCarouselView添加到UICollectionView
+        collectionView.addSubview(recommendCarouselView)
+        // 设置collectionView的内边距
+        collectionView.contentInset = UIEdgeInsets(top: CarouselViewHeight, left: 0, bottom: 0, right: 0)
     
     }
 }
@@ -77,7 +88,14 @@ class RecommendViewController: UIViewController {
 // MARK: -  请求数据
 extension RecommendViewController {
     private func loadData(){
-        recommendViewModule.requestData()
+        // 请求推荐数据
+        recommendViewModule.requestData{
+            self.collectionView.reloadData()
+        }
+        // 请求轮播图数据
+        recommendViewModule.requestCarouseData{
+            self.recommendCarouselView.carouseGroup = self.recommendViewModule.carouseGroup
+        }
     }
 }
 // MARK: - 进行扩展设置推荐界面
@@ -94,41 +112,40 @@ extension RecommendViewController {
 extension RecommendViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     /// 有分组的话实现该协议 一共有多少个组
-    ///
-    /// - Parameter collectionView: <#collectionView description#>
-    /// - Returns: <#return value description#>
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendViewModule.authorGroup.count
     }
     
     /// 每组有多少个数据源
-    ///
-    /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - section: <#section description#>
-    /// - Returns: <#return value description#>
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0{
-            return 8
-        }else{
-            return 4
-        }
+        let group = recommendViewModule.authorGroup[section]
+        return group.authors.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 1、获取我们的Cell
-        //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalCellID, for: indexPath)
-        var cell : UICollectionViewCell!
-        // 取出cell
+        // 0 取出模型对象
+        let group = recommendViewModule.authorGroup[indexPath.section]
+        let author = group.authors[indexPath.item]
+        
+        // 1 定义cell
+        var cell : CollectionViewBasicCell
+        
+        // 3 取出cell
         if indexPath.section == 1{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrettyCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrettyCellID, for: indexPath) as! CollectionViewPrettyCell
         }else{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalCellID, for: indexPath) as! CollectionViewNormalCell
         }
+        
+        // 4 将我们的模型赋值给我们的cell
+        cell.author = author
         return cell
+        
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView, for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView, for: indexPath) as! CollectionHeaderView
         //headerView.backgroundColor = UIColor.cyan
+        // 取出数据头
+        headerView.group = recommendViewModule.authorGroup[indexPath.section]
         return headerView
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

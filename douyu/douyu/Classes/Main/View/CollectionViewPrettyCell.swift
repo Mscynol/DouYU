@@ -7,12 +7,17 @@
 //
 
 import UIKit
-
-class CollectionViewPrettyCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+class CollectionViewPrettyCell: CollectionViewBasicCell {
+  
+    /// 控件属性
+    @IBOutlet weak var cityButton: UIButton!
+    
+    /// 定义模型属性
+    override var author : Author?{
+        didSet{
+            super.author = author
+            // 3 城市
+            cityButton.setTitle(author?.anchor_city, for: .normal)
+        }
     }
-
 }
