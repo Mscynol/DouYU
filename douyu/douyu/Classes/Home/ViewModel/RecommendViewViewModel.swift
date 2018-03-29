@@ -37,7 +37,7 @@ extension RecommendViewViewModel{
             // 3、遍历字典，转换成模型对象
             // 3.1 设置组属性
             self.bigDataGroup.tag_name = "热门"
-            self.bigDataGroup.icon_url = "home_header_hot"
+            self.bigDataGroup.small_icon_url = "home_header_hot"
             // 获取主播数据
             for dict in dataArray{
                 let author = Author(dict: dict)
@@ -59,7 +59,7 @@ extension RecommendViewViewModel{
             // 3、遍历字典，转换成模型对象
             // 3.2 设置组属性
             self.prettyDataGroup.tag_name = "颜值"
-            self.prettyDataGroup.icon_url = "columnYanzhiIcon"
+            self.prettyDataGroup.small_icon_url = "columnYanzhiIcon"
             // 获取主播数据
             for dict in dataArray{
                 let author = Author(dict: dict)

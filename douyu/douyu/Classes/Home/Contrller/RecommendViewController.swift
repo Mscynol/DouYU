@@ -14,6 +14,7 @@ private let ItemWidth : CGFloat = (ScreenWidth - (3 * ItemMargin)) / 2
 private let ItemNormalHeight : CGFloat = ItemWidth * 3 / 4
 private let ItemPrettyHeight : CGFloat = ItemWidth * 4 / 3
 private let CarouselViewHeight : CGFloat = ScreenWidth * 3 / 8
+private let GameViewHeight : CGFloat = 90.0
 private let HeadViewHeight : CGFloat = 50
 private let NormalCellID = "NormalCellID"
 private let PrettyCellID = "PrettyCellID"
@@ -62,8 +63,14 @@ class RecommendViewController: UIViewController {
     
     private lazy var recommendCarouselView : RecommendCarouseView = {
         let recommendCarouselView = RecommendCarouseView.recommendCarouselView()
-        recommendCarouselView.frame = CGRect(x: 0, y: -CarouselViewHeight, width: ScreenWidth, height: CarouselViewHeight)
+        recommendCarouselView.frame = CGRect(x: 0, y: -(CarouselViewHeight + GameViewHeight), width: ScreenWidth, height: CarouselViewHeight)
         return recommendCarouselView
+    }()
+    
+    private lazy var recommendGameView : RecommendGameView = {
+        let recommendGameView = RecommendGameView.recommendGameView()
+        recommendGameView.frame = CGRect(x: 0, y: -GameViewHeight, width: ScreenWidth, height: GameViewHeight)
+        return recommendGameView
     }()
     
     /// 系统回调函数
@@ -79,8 +86,9 @@ class RecommendViewController: UIViewController {
         
         // MARK: - 将recommendCarouselView添加到UICollectionView
         collectionView.addSubview(recommendCarouselView)
+        collectionView.addSubview(recommendGameView)
         // 设置collectionView的内边距
-        collectionView.contentInset = UIEdgeInsets(top: CarouselViewHeight, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: CarouselViewHeight + GameViewHeight, left: 0, bottom: 0, right: 0)
     
     }
 }
@@ -90,7 +98,10 @@ extension RecommendViewController {
     private func loadData(){
         // 请求推荐数据
         recommendViewModule.requestData{
+            // 展示推荐数据
             self.collectionView.reloadData()
+            // 将数据传递给gameView
+            self.recommendGameView.gameGroups = self.recommendViewModule.authorGroup
         }
         // 请求轮播图数据
         recommendViewModule.requestCarouseData{

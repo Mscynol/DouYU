@@ -20,9 +20,26 @@ class CollectionHeaderView: UICollectionReusableView {
     var group : AuthorGroup? {
         didSet {
             titleLabel.text = group?.tag_name
-            // 4 设置封面照片
-            let imageURL = URL(string: (group?.icon_url)!)
-            iconImageView.kf.setImage(with: imageURL)
+            // 4 设置头部图片
+            if verifyUrl(str: (group?.small_icon_url)!){
+                iconImageView.kf.setImage(with: URL(string:(group?.small_icon_url)!))
+            }else{
+                iconImageView.image = UIImage(named: group?.small_icon_url ?? "home_header_normal")
+            }
+            
         }
+    }
+}
+
+// MARK: - 校验是否连接是URL
+extension CollectionHeaderView{
+    
+    private func verifyUrl(str:String) -> Bool {
+        //创建NSURL实例
+        if let url = NSURL(string: str) {
+            //检测应用是否能打开这个NSURL实例
+            return UIApplication.shared.canOpenURL(url as URL)
+        }
+        return false
     }
 }

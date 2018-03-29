@@ -27,6 +27,8 @@ class AuthorGroup: NSObject {
     
     /// 该组显示头标
     var icon_url : String = ""
+    //
+    var small_icon_url : String = "home_header_normal"
     
     /// 定义主播的模型对象数组
     lazy var authors : [Author] = [Author]()
